@@ -14,12 +14,14 @@ Current utilities focus on:
 - Address formatting
 - Token amount handling
 - Explorer links
+- LifyX market helpers
 - EVM-compatible application workflows
 
 ## Repository Structure
 
 src/
 ├── address/
+├── lifyx/
 ├── networks/
 ├── tokens/
 └── wallet/
@@ -41,6 +43,30 @@ These utilities support wallet address formatting, validation and explorer link 
 Documentation:
 
 `src/address/README.md`
+
+## LifyX Integration Utilities
+
+Location:
+
+`src/lifyx/`
+
+Available utilities:
+
+- `format-market-symbol.js`
+- `get-market-type.js`
+- `get-market-provider.js`
+- `get-trading-url.js`
+
+These utilities support LifyX Spot and Perpetual market formatting, market type detection, infrastructure provider mapping and trading URL generation.
+
+Current provider mapping:
+
+- Spot → KalqiX
+- Perpetual → Orderly
+
+Documentation:
+
+`src/lifyx/README.md`
 
 ## Network Utilities
 
@@ -109,14 +135,37 @@ Current network utility configuration includes:
 - Polygon
 - BNB Smart Chain
 
-## Infrastructure
+## LifyX Trading Infrastructure
 
-LifyX integrates specialized infrastructure providers across its trading ecosystem:
+LifyX integrates specialized infrastructure providers across its trading ecosystem.
 
-- KalqiX infrastructure for Spot markets
-- Orderly infrastructure for Perpetual markets
+### Spot
 
-Utilities in this repository are designed to support the application and integration layer around the LifyX ecosystem.
+Infrastructure Provider:
+
+`KalqiX`
+
+Used for LifyX Spot market infrastructure and related trading workflows.
+
+### Perpetuals
+
+Infrastructure Provider:
+
+`Orderly`
+
+Used for LifyX Perpetual market infrastructure, liquidity access and related trading workflows.
+
+## Example Markets
+
+Spot:
+
+`cbBTC_USDC`
+
+Perpetual:
+
+`PERP_BTC_USDC`
+
+LifyX-specific utilities can identify, format and generate trading links for supported market symbols.
 
 ## Usage
 
@@ -131,6 +180,8 @@ These utilities can be used across:
 - Explorer integrations
 - Spot integrations
 - Perpetual integrations
+- Market selectors
+- Trading route generation
 
 ## Security
 
